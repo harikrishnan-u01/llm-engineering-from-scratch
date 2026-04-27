@@ -1,0 +1,48 @@
+Retrieval-Augmented Generation (RAG)
+
+RAG is a technique that improves LLM outputs by retrieving relevant information from an external knowledge base and injecting it into the prompt before generating a response. It addresses the core limitation of LLMs having a static knowledge cutoff and tendency to hallucinate.
+
+The RAG Pipeline
+A RAG system has two phases:
+
+1. Indexing (done once):
+   - Load documents (PDFs, text files, web pages, etc.)
+   - Split them into smaller chunks (e.g., 500-1000 characters each)
+   - Convert each chunk into a vector embedding using an embedding model
+   - Store the chunks and their embeddings in a vector database
+
+2. Retrieval and Generation (done at query time):
+   - Take the user's question
+   - Convert it into a vector embedding using the same embedding model
+   - Search the vector database for the most similar chunks (nearest neighbors)
+   - Inject the retrieved chunks as context into the LLM prompt
+   - Generate a response that is grounded in the retrieved context
+
+What are Embeddings?
+Embeddings are numerical representations of text as vectors (lists of floating-point numbers). The key property is that semantically similar texts have similar vectors — they are "close" in the high-dimensional embedding space. A sentence like "The cat sat on the mat" and "A feline rested on a rug" will have similar embeddings even though they share no words.
+
+Cosine Similarity
+The most common way to measure similarity between two embeddings is cosine similarity. It measures the angle between two vectors — a value of 1.0 means they point in the same direction (identical meaning), 0 means they are orthogonal (unrelated), and -1 means opposite meaning. In RAG, you embed the query and find the stored chunks with the highest cosine similarity.
+
+Vector Databases
+A vector database stores embeddings and enables fast similarity search (nearest-neighbor search). When you query with an embedding, it returns the top-k most similar stored vectors. Popular options include:
+- ChromaDB: Open-source, easy to use locally, great for learning
+- Pinecone: Cloud-hosted, production-scale
+- Weaviate: Open-source, supports hybrid search
+- FAISS: Facebook's library, very fast but lower-level
+
+Chunking Strategies
+How you split documents significantly affects retrieval quality:
+- Fixed-size chunking: Split every N characters. Simple but may cut sentences awkwardly.
+- Recursive splitting: Split by paragraph, then sentence, then character — preserves natural boundaries.
+- Semantic chunking: Split at topic boundaries based on embedding similarity. Most accurate but slower.
+- Overlap: Adding overlap between chunks (e.g., 50 characters from the previous chunk) ensures context is not lost at boundaries.
+
+Why RAG beats Fine-tuning for Knowledge
+Fine-tuning (retraining the model on your data) is expensive, slow, and the model can still hallucinate or forget information. RAG is cheaper, faster to update (just re-index new documents), and more transparent — you can show users exactly which chunks were retrieved. For knowledge-intensive tasks (Q&A over documents, customer support, research assistance), RAG is almost always the better approach.
+
+RAG Failure Modes
+1. Retrieval fails: The right chunk is not retrieved, so the model lacks the context to answer correctly. Fix: better chunking, better embedding model, or hybrid search.
+2. Context not used: The model retrieves the right chunk but ignores it and answers from its parametric memory. Fix: stronger system prompt instructing the model to rely only on context.
+3. Chunk too small: The retrieved chunk lacks enough context to be useful. Fix: increase chunk size or add overlap.
+4. Chunk too large: The retrieved chunk contains irrelevant information that confuses the model. Fix: decrease chunk size.

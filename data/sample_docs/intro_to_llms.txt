@@ -1,0 +1,31 @@
+Introduction to Large Language Models (LLMs)
+
+Large Language Models (LLMs) are a type of artificial intelligence model trained on massive amounts of text data. They learn to predict the next word (or token) in a sequence, and through this simple objective, they acquire surprisingly broad capabilities including reasoning, summarization, translation, and code generation.
+
+What is a Token?
+A token is the basic unit of text that an LLM processes. Tokens are not exactly words — they can be whole words, parts of words, or punctuation marks. For example, the word "unhappiness" might be split into "un", "happiness". Most modern LLMs have a context window measured in tokens — this is the maximum amount of text they can process at once.
+
+How LLMs Work
+LLMs are based on the Transformer architecture, introduced in the 2017 paper "Attention Is All You Need." The core mechanism is self-attention, which allows the model to weigh the importance of different tokens relative to each other when making predictions. During training, the model sees billions of examples of text and adjusts its internal parameters (weights) to minimize prediction errors.
+
+Prompting
+When you interact with an LLM, you provide a "prompt" — the input text that conditions the model's response. The quality and structure of your prompt significantly affects the output. Key prompting techniques include:
+- Zero-shot prompting: Ask the model to do something without examples.
+- Few-shot prompting: Provide 2-3 examples before your actual question.
+- System prompts: Give the model a persona or set of instructions that governs its behavior throughout a conversation.
+- Chain-of-thought: Ask the model to "think step by step" to improve reasoning on complex problems.
+
+Temperature
+Temperature is a parameter that controls the randomness of the model's output. At temperature 0, the model always picks the most likely next token (deterministic, consistent). At higher temperatures (0.7-1.0), it samples from a distribution, producing more creative and varied outputs. At very high temperatures, output becomes incoherent.
+
+Context Window
+The context window is the maximum number of tokens an LLM can attend to at once. Everything the model "knows" about your conversation must fit within this window. Modern models have context windows ranging from 4,000 to over 1,000,000 tokens. When a conversation exceeds the context window, earlier messages are dropped or summarized.
+
+Limitations of LLMs
+LLMs have several important limitations:
+1. Knowledge cutoff: They only know about information that existed in their training data up to a certain date.
+2. Hallucination: They can confidently generate false information because they are optimized to produce fluent text, not accurate text.
+3. No real-time access: By default, they cannot search the web or access current data.
+4. Context limits: Very long documents may not fit in the context window.
+
+These limitations are exactly why techniques like RAG (Retrieval-Augmented Generation) and Agents were developed — to give LLMs access to external knowledge and tools.
