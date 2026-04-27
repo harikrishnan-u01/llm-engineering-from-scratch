@@ -1,0 +1,120 @@
+<svg width="1200" height="628" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="14" cy="14" r="0.9" fill="#1e293b"/>
+    </pattern>
+    <linearGradient id="phase-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#3b82f6"/>
+      <stop offset="33%"  stop-color="#10b981"/>
+      <stop offset="66%"  stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="628" fill="#0f172a"/>
+  <rect width="1200" height="628" fill="url(#dots)"/>
+
+  <!-- Top accent bar -->
+  <rect y="0" width="1200" height="5" fill="url(#phase-grad)"/>
+
+  <!-- ── TITLE AREA ──────────────────────────────────────────── -->
+  <text x="600" y="80" text-anchor="middle"
+        fill="#f8fafc" font-size="48" font-weight="700" letter-spacing="0.5">
+    LLM Engineering From Scratch
+  </text>
+  <text x="600" y="120" text-anchor="middle"
+        fill="#94a3b8" font-size="17">
+    Build every concept by hand first — then see exactly what the framework is hiding
+  </text>
+  <text x="600" y="150" text-anchor="middle"
+        fill="#475569" font-size="13">
+    4 Phases · 10 Scripts · MacBook Pro (Intel i5, 16 GB) · No GPU · No API Keys
+  </text>
+
+  <!-- Divider -->
+  <line x1="160" y1="172" x2="1040" y2="172" stroke="#1e293b" stroke-width="1.5"/>
+
+
+  <!-- ── ROADMAP ──────────────────────────────────────────────
+       Node centres: x = 210, 470, 730, 990     y = 308
+       Circle radius: 54
+       ─────────────────────────────────────────────────────── -->
+
+  <!-- Gradient connecting line (drawn first, circles sit on top) -->
+  <line x1="210" y1="308" x2="990" y2="308"
+        stroke="url(#phase-grad)" stroke-width="3.5" opacity="0.55"/>
+
+  <!-- Arrow chevrons between nodes -->
+  <polygon points="335,301 335,315 350,308" fill="#334155"/>
+  <polygon points="595,301 595,315 610,308" fill="#334155"/>
+  <polygon points="855,301 855,315 870,308" fill="#334155"/>
+
+
+  <!-- ══ PHASE 1 — LLM Basics ══ -->
+  <circle cx="210" cy="308" r="56" fill="#1d4ed8" stroke="#60a5fa" stroke-width="2"/>
+  <text x="210" y="297" text-anchor="middle" fill="#bfdbfe" font-size="11" font-weight="600" letter-spacing="1">PHASE</text>
+  <text x="210" y="325" text-anchor="middle" fill="white"   font-size="30" font-weight="700">1</text>
+
+  <text x="210" y="390" text-anchor="middle" fill="#60a5fa" font-size="15" font-weight="700">LLM Basics</text>
+  <text x="210" y="412" text-anchor="middle" fill="#94a3b8" font-size="12">HTTP · Tokens · Streaming</text>
+  <text x="210" y="430" text-anchor="middle" fill="#64748b" font-size="11">Prompting · LCEL Chains</text>
+
+
+  <!-- ══ PHASE 2 — RAG ══ -->
+  <circle cx="470" cy="308" r="56" fill="#065f46" stroke="#34d399" stroke-width="2"/>
+  <text x="470" y="297" text-anchor="middle" fill="#a7f3d0" font-size="11" font-weight="600" letter-spacing="1">PHASE</text>
+  <text x="470" y="325" text-anchor="middle" fill="white"   font-size="30" font-weight="700">2</text>
+
+  <text x="470" y="390" text-anchor="middle" fill="#34d399" font-size="15" font-weight="700">RAG System</text>
+  <text x="470" y="412" text-anchor="middle" fill="#94a3b8" font-size="12">Embeddings · Cosine Similarity</text>
+  <text x="470" y="430" text-anchor="middle" fill="#64748b" font-size="11">ChromaDB · Vector Retrieval</text>
+
+
+  <!-- ══ PHASE 3 — Agents ══ -->
+  <circle cx="730" cy="308" r="56" fill="#92400e" stroke="#fbbf24" stroke-width="2"/>
+  <text x="730" y="297" text-anchor="middle" fill="#fde68a" font-size="11" font-weight="600" letter-spacing="1">PHASE</text>
+  <text x="730" y="325" text-anchor="middle" fill="white"   font-size="30" font-weight="700">3</text>
+
+  <text x="730" y="390" text-anchor="middle" fill="#fbbf24" font-size="15" font-weight="700">AI Agents</text>
+  <text x="730" y="412" text-anchor="middle" fill="#94a3b8" font-size="12">ReAct Loop · Tool Use</text>
+  <text x="730" y="430" text-anchor="middle" fill="#64748b" font-size="11">LangGraph State Machine</text>
+
+
+  <!-- ══ PHASE 4 — Multi-Agent ══ -->
+  <circle cx="990" cy="308" r="56" fill="#4c1d95" stroke="#a78bfa" stroke-width="2"/>
+  <text x="990" y="297" text-anchor="middle" fill="#ddd6fe" font-size="11" font-weight="600" letter-spacing="1">PHASE</text>
+  <text x="990" y="325" text-anchor="middle" fill="white"   font-size="30" font-weight="700">4</text>
+
+  <text x="990" y="390" text-anchor="middle" fill="#a78bfa" font-size="15" font-weight="700">Multi-Agent</text>
+  <text x="990" y="412" text-anchor="middle" fill="#94a3b8" font-size="12">Planner / Executor Pattern</text>
+  <text x="990" y="430" text-anchor="middle" fill="#64748b" font-size="11">Generator / Critic Loop</text>
+
+
+  <!-- ── PHILOSOPHY BADGE ───────────────────────────────────── -->
+  <rect x="350" y="462" width="500" height="42" rx="21"
+        fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text x="600" y="489" text-anchor="middle"
+        fill="#94a3b8" font-size="13">
+    ✦  Build from scratch first · Then understand what the framework hides  ✦
+  </text>
+
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <rect y="536" width="1200" height="92" fill="#1e293b"/>
+  <text x="600" y="566" text-anchor="middle"
+        fill="#60a5fa" font-size="14" font-weight="600">
+    github.com/harikrishnan-u01/llm-engineering-from-scratch
+  </text>
+  <text x="600" y="592" text-anchor="middle"
+        fill="#475569" font-size="12">
+    Ollama · LangChain · LangGraph · ChromaDB · Python
+  </text>
+  <text x="600" y="614" text-anchor="middle"
+        fill="#334155" font-size="11">
+    Harikrishnan · 2026
+  </text>
+
+  <!-- Bottom accent bar -->
+  <rect y="623" width="1200" height="5" fill="url(#phase-grad)"/>
+</svg>

@@ -4,6 +4,8 @@
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
 [![Ollama](https://img.shields.io/badge/Runs%20on-Ollama%20(local)-orange.svg)](https://ollama.com)
 
+![Project Overview](article_cover.svg)
+
 A hands-on curriculum for learning modern LLM engineering — from raw API calls through production-grade multi-agent workflows — entirely on your local machine with no API keys required.
 
 ## What This Project Teaches
