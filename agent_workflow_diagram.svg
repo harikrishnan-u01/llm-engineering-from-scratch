@@ -1,0 +1,139 @@
+<svg width="1200" height="660" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="arr-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#475569"/>
+    </marker>
+    <marker id="arr-amber" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f59e0b"/>
+    </marker>
+    <marker id="arr-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f87171"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="660" fill="#0f172a"/>
+
+  <!-- Header -->
+  <rect width="1200" height="86" fill="#1e293b"/>
+  <text x="600" y="40" text-anchor="middle" fill="#f8fafc" font-size="26" font-weight="700" letter-spacing="0.5">Multi-Agent AI Workflows</text>
+  <text x="600" y="68" text-anchor="middle" fill="#64748b" font-size="13">Phase 4 · llm-engineering-from-scratch · Built with LangGraph + Ollama (local, no API key)</text>
+
+  <!-- Centre divider -->
+  <line x1="600" y1="86" x2="600" y2="625" stroke="#334155" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       LEFT — Script 09 : Planner / Executor   (centre X = 300)
+       ══════════════════════════════════════════════════════════ -->
+
+  <text x="300" y="114" text-anchor="middle" fill="#60a5fa" font-size="16" font-weight="700">Script 09 — Planner / Executor</text>
+
+  <!-- START -->
+  <circle cx="300" cy="158" r="23" fill="#10b981"/>
+  <text x="300" y="163" text-anchor="middle" fill="white" font-size="12" font-weight="700">START</text>
+
+  <!-- ↓ -->
+  <line x1="300" y1="181" x2="300" y2="210" stroke="#475569" stroke-width="2" marker-end="url(#arr-gray)"/>
+
+  <!-- PLANNER -->
+  <rect x="170" y="214" width="260" height="58" rx="10" fill="#1d4ed8" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="300" y="239" text-anchor="middle" fill="white" font-size="14" font-weight="700">PLANNER</text>
+  <text x="300" y="259" text-anchor="middle" fill="#bfdbfe" font-size="11">Breaks goal into 3–5 concrete steps</text>
+
+  <!-- ↓ -->
+  <line x1="300" y1="272" x2="300" y2="304" stroke="#475569" stroke-width="2" marker-end="url(#arr-gray)"/>
+
+  <!-- EXECUTOR -->
+  <rect x="170" y="308" width="260" height="58" rx="10" fill="#3730a3" stroke="#818cf8" stroke-width="1.5"/>
+  <text x="300" y="333" text-anchor="middle" fill="white" font-size="14" font-weight="700">EXECUTOR</text>
+  <text x="300" y="353" text-anchor="middle" fill="#c7d2fe" font-size="11">Runs each step · uses tools if needed</text>
+
+  <!-- EXECUTOR self-loop arrow (right side) -->
+  <path d="M 430,328 L 494,328 L 494,350 L 430,350" stroke="#f59e0b" stroke-width="2" fill="none" marker-end="url(#arr-amber)"/>
+  <text x="500" y="334" fill="#f59e0b" font-size="11" font-weight="600">next</text>
+  <text x="500" y="348" fill="#f59e0b" font-size="11" font-weight="600">step</text>
+
+  <!-- tools badge -->
+  <rect x="188" y="372" width="224" height="20" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="300" y="386" text-anchor="middle" fill="#64748b" font-size="10">🔧  calculator · get_date · search_docs</text>
+
+  <!-- ↓  (with "all steps done" label) -->
+  <line x1="300" y1="366" x2="300" y2="402" stroke="#475569" stroke-width="2" marker-end="url(#arr-gray)"/>
+  <text x="320" y="389" fill="#94a3b8" font-size="10">all steps done</text>
+
+  <!-- SYNTHESISER -->
+  <rect x="160" y="406" width="280" height="58" rx="10" fill="#5b21b6" stroke="#a78bfa" stroke-width="1.5"/>
+  <text x="300" y="431" text-anchor="middle" fill="white" font-size="14" font-weight="700">SYNTHESISER</text>
+  <text x="300" y="451" text-anchor="middle" fill="#ddd6fe" font-size="11">Assembles step results into final answer</text>
+
+  <!-- ↓ -->
+  <line x1="300" y1="464" x2="300" y2="494" stroke="#475569" stroke-width="2" marker-end="url(#arr-gray)"/>
+
+  <!-- END -->
+  <circle cx="300" cy="518" r="23" fill="#10b981"/>
+  <text x="300" y="523" text-anchor="middle" fill="white" font-size="12" font-weight="700">END</text>
+
+  <!-- Flow caption -->
+  <text x="300" y="566" text-anchor="middle" fill="#475569" font-size="11">START → planner → executor (loops) → synthesiser → END</text>
+
+
+  <!-- ══════════════════════════════════════════════════════════
+       RIGHT — Script 10 : Generator / Critic   (centre X = 900)
+       ══════════════════════════════════════════════════════════ -->
+
+  <text x="900" y="114" text-anchor="middle" fill="#f472b6" font-size="16" font-weight="700">Script 10 — Generator / Critic (Reflection Loop)</text>
+
+  <!-- START -->
+  <circle cx="900" cy="158" r="23" fill="#10b981"/>
+  <text x="900" y="163" text-anchor="middle" fill="white" font-size="12" font-weight="700">START</text>
+
+  <!-- ↓ -->
+  <line x1="900" y1="181" x2="900" y2="210" stroke="#475569" stroke-width="2" marker-end="url(#arr-gray)"/>
+
+  <!-- GENERATOR -->
+  <rect x="770" y="214" width="260" height="58" rx="10" fill="#92400e" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="900" y="239" text-anchor="middle" fill="white" font-size="14" font-weight="700">GENERATOR</text>
+  <text x="900" y="259" text-anchor="middle" fill="#fde68a" font-size="11">Writes or revises the draft</text>
+
+  <!-- ↓ -->
+  <line x1="900" y1="272" x2="900" y2="334" stroke="#475569" stroke-width="2" marker-end="url(#arr-gray)"/>
+
+  <!-- CRITIC -->
+  <rect x="770" y="338" width="260" height="58" rx="10" fill="#991b1b" stroke="#f87171" stroke-width="1.5"/>
+  <text x="900" y="363" text-anchor="middle" fill="white" font-size="14" font-weight="700">CRITIC</text>
+  <text x="900" y="383" text-anchor="middle" fill="#fecaca" font-size="11">Reviews quality → APPROVE or REVISE</text>
+
+  <!-- CRITIC → GENERATOR back-loop (left side) -->
+  <path d="M 770,358 L 708,358 L 708,243 L 770,243" stroke="#f87171" stroke-width="2" fill="none" marker-end="url(#arr-red)"/>
+  <!-- REVISE label (two lines, centred on the left path at x≈680) -->
+  <text x="672" y="297" text-anchor="middle" fill="#f87171" font-size="11" font-weight="700">REVISE</text>
+  <text x="672" y="312" text-anchor="middle" fill="#f87171" font-size="10">(back to generator)</text>
+
+  <!-- ↓  APPROVE branch -->
+  <line x1="900" y1="396" x2="900" y2="430" stroke="#475569" stroke-width="2" marker-end="url(#arr-gray)"/>
+  <text x="918" y="418" fill="#94a3b8" font-size="10">APPROVE</text>
+
+  <!-- FINALISE -->
+  <rect x="770" y="434" width="260" height="58" rx="10" fill="#064e3b" stroke="#34d399" stroke-width="1.5"/>
+  <text x="900" y="459" text-anchor="middle" fill="white" font-size="14" font-weight="700">FINALISE</text>
+  <text x="900" y="479" text-anchor="middle" fill="#6ee7b7" font-size="11">Accepts approved draft as final output</text>
+
+  <!-- ↓ -->
+  <line x1="900" y1="492" x2="900" y2="494" stroke="#0f172a" stroke-width="1"/>
+  <line x1="900" y1="492" x2="900" y2="495" stroke="#475569" stroke-width="2" marker-end="url(#arr-gray)"/>
+
+  <!-- END -->
+  <circle cx="900" cy="518" r="23" fill="#10b981"/>
+  <text x="900" y="523" text-anchor="middle" fill="white" font-size="12" font-weight="700">END</text>
+
+  <!-- Flow caption -->
+  <text x="900" y="566" text-anchor="middle" fill="#475569" font-size="11">START → generator → critic → [revise loop | finalise] → END</text>
+
+
+  <!-- Footer -->
+  <rect y="622" width="1200" height="38" fill="#1e293b"/>
+  <text x="600" y="646" text-anchor="middle" fill="#475569" font-size="12">
+    github.com/harikrishnan-u01/llm-engineering-from-scratch · LangGraph · Ollama
+  </text>
+</svg>

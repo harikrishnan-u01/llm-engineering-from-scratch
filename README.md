@@ -1,5 +1,9 @@
 # llm-engineering-from-scratch
 
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
+[![Ollama](https://img.shields.io/badge/Runs%20on-Ollama%20(local)-orange.svg)](https://ollama.com)
+
 A hands-on curriculum for learning modern LLM engineering — from raw API calls through production-grade multi-agent workflows — entirely on your local machine with no API keys required.
 
 ## What This Project Teaches
@@ -165,6 +169,12 @@ python scripts/phase4_multiagent/10_reflection_loop.py
 - **Local first.** Ollama runs everything on your machine — no OpenAI API key, no cloud costs, works offline.
 - **Minimal dependencies.** Plain Python scripts with no Jupyter notebooks or extra orchestration layers.
 - **Correct order matters.** Each phase builds on the previous one, and the ChromaDB index built in Phase 2 is used by Phases 3 and 4.
+
+---
+
+## Agent Workflow Diagram
+
+![Multi-Agent Workflows](agent_workflow_diagram.svg)
 
 ---
 
